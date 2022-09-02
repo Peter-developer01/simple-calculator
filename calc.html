@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Calculator">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="calc.css">
+		<link rel="shortcut icon" href="calculator.ico" type="image/x-icon">
+    </head>
+    <body>
+		<div class="calc">
+			<label><input type="text" autofocus></label>
+			<br>
+			<button>0</button>
+			<button>1</button>
+			<button>2</button>
+			<button id="multiply">&times;</button>
+			<br>
+			<button>3</button>
+			<button>4</button>
+			<button>5</button>
+			<button id="divide">/</button>
+			<br>
+			<button>6</button>
+			<button>7</button>
+			<button>8</button>
+			<button id="increment">+</button>
+			<br>
+			<button>9</button>
+			<button id="slice" class="backspace">&rarr;</button>
+			<button id="decrement">-</button>
+			<button id="equals">=</button>
+		</div>
+		<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" class="settings" id="open-settings">
+			<defs>
+				<style>
+					.cls-1 {
+						fill: none;
+					}
+				</style>
+			</defs>
+			<g data-name="Layer 2" id="Layer_2">
+				<path
+					d="M18,29H14a1,1,0,0,1-1-1V26.56a1.38,1.38,0,0,0-2.35-1l-1,1a1,1,0,0,1-1.42,0L5.39,23.78a1,1,0,0,1,0-1.42l1-1a1.38,1.38,0,0,0-1-2.35H4a1,1,0,0,1-1-1V14a1,1,0,0,1,1-1H5.44a1.38,1.38,0,0,0,1-2.35l-1-1a1,1,0,0,1,0-1.42L8.22,5.39a1,1,0,0,1,1.42,0l1,1a1.38,1.38,0,0,0,2.35-1V4a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V5.44a1.38,1.38,0,0,0,2.35,1l1-1a1,1,0,0,1,1.42,0l2.83,2.83a1,1,0,0,1,0,1.42l-1,1a1.38,1.38,0,0,0,1,2.35H28a1,1,0,0,1,1,1v4a1,1,0,0,1-1,1H26.56a1.38,1.38,0,0,0-1,2.35l1,1a1,1,0,0,1,0,1.42l-2.83,2.83a1,1,0,0,1-1.42,0l-1-1a1.38,1.38,0,0,0-2.35,1V28A1,1,0,0,1,18,29Zm-3-2h2v-.44a3.37,3.37,0,0,1,5.76-2.38l.31.31,1.42-1.42-.31-.31A3.37,3.37,0,0,1,26.56,17H27V15h-.44a3.37,3.37,0,0,1-2.38-5.76l.31-.31L23.07,7.51l-.31.31A3.37,3.37,0,0,1,17,5.44V5H15v.44A3.37,3.37,0,0,1,9.24,7.82l-.31-.31L7.51,8.93l.31.31A3.37,3.37,0,0,1,5.44,15H5v2h.44a3.37,3.37,0,0,1,2.38,5.76l-.31.31,1.42,1.42.31-.31A3.37,3.37,0,0,1,15,26.56Z" />
+				<path d="M16,21a5,5,0,1,1,5-5A5,5,0,0,1,16,21Zm0-8a3,3,0,1,0,3,3A3,3,0,0,0,16,13Z" />
+			</g>
+		</svg>
+		<div class="calc__controls">
+			<div class="calc__controls-close">&times;</div>
+			Theme: <select id="theme">
+				<option value="white">Light</option>
+				<option value="dark">Dark</option>
+			</select>
+			<br>
+			<label id="with-gradient"><input type="checkbox"> With gradient</label>
+			<br>
+			Масштаб: <div class="no-white-space scale-wrapper"><span id="decrement">+</span>    <span id="increment">&HorizontalLine;</span></div>
+			<button id="default-settings">Reset </button>
+		</div>
+
+		<footer>
+			<h4 style="transform: translateY(-20px);">This calculator powered by <strong><b>JavaScript</b></strong><b></b>.</h4>
+		</footer>
+
+        <script src="calc.js"></script>
+    </body>
+</html>

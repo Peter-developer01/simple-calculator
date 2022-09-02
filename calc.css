@@ -1,0 +1,229 @@
+:root {
+	--calc-gradient-color-one: #f2f4ff;
+	--calc-gradient-color-two: #8f9093;
+	--white-color: #201616;
+	--gray-color: #7b7b7b;
+	--blue-color: #000088;
+	--light-gray-color: #9f9f9f;
+	--border-bottom-unactive-color: #2a2a2a;
+	--background: #FFFFFF;
+	--svg-fill: #000000;
+		--svg-fill-hover: #bfbaba;
+	--gradient: radial-gradient(var(--calc-gradient-color-one), var(--calc-gradient-color-two));
+}
+
+:root[data-theme=dark] {
+	--calc-gradient-color-one: #1538e6;
+	--calc-gradient-color-two: #151724;
+	--white-color: #FFFFFF;
+	--gray-color: #CCCCCC;
+	--blue-color: #0000FF;
+	--light-gray-color: #DDDDDD;
+	--border-bottom-unactive-color: #d8d9da;
+	--background: #1b242c;
+	--svg-fill: #bbbbbb;
+		--svg-fill-hover: #ffffff;
+}
+
+:root[with-gradient] {
+	background: radial-gradient(var(--calc-gradient-color-one), var(--calc-gradient-color-two)) 80px -21px;
+	--gradient: radial-gradient(var(--calc-gradient-color-one), var(--calc-gradient-color-two)) 10px 10px;
+}
+
+html {
+	background: var(--background);
+	font-size: 10px;
+	font-family: Arial;
+	transition: 0.5s background;
+	min-height: 100%;
+}
+
+body {
+	font-size: 3rem;
+}
+
+button, label {
+	cursor: pointer;
+	user-select: none;
+}
+
+.calc {
+	text-align: center;
+	margin: 0 auto;
+	transform: translateY(50%);
+	user-select: none;
+}
+
+.calc button {
+	background: var(--gradient);
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	border: none;
+	font-size: 2rem;
+	outline: none;
+	cursor: pointer;
+	color: var(--white-color);
+}
+
+.calc button:hover {
+	background: var(--gray-color);
+	background: radial-gradient(var(--calc-gradient-color-one), var(--calc-gradient-color-two)) 90px 20px;
+}
+
+.calc button + button {
+	margin-bottom: 1rem;
+}
+
+.calc button#multiply {
+	font-size: 2rem;
+}
+
+.calc input {
+	width: calc(4rem + 4rem + 4rem + 4rem + 1rem + 1.5rem);
+	height: 4rem;
+	font-size: 3rem;
+	border: none;
+	border-bottom: 0.4rem solid var(--border-bottom-unactive-color);
+	border-radius: 1rem 1rem 0 0;
+	outline: none;
+	padding-left: 1rem;
+	margin-bottom: 1rem;
+}
+
+:root:not([data-theme=dark]) .calc input {
+	border: 1px solid #000000;
+}
+
+.calc input:focus {
+	border-bottom: 0.4rem solid var(--blue-color);
+}
+
+.calc .backspace {
+	transform: rotate(180deg);
+}
+
+
+/* Controls */
+.calc__controls {
+	background: var(--light-gray-color);
+	color: var();
+	user-select: text;
+	position: fixed;
+	top: 20px;
+	right: 2rem;
+	width: 30rem;
+	height: 40rem;
+	text-align: center;
+	border-radius: 30px;
+	display: none;
+}
+
+.calc__controls-close {
+	cursor: pointer;
+	font-size: 5rem;
+	text-align: end;
+	padding-right: 2.5rem;
+}
+
+.calc__controls select {
+	height: 3rem;
+	font-size: 2.5rem;
+	padding-bottom: -0.2rem;
+}
+
+
+
+.settings {
+	position: fixed;
+	top: 2rem;
+	right: 2rem;
+	width: 4rem;
+	height: 4rem;
+	fill: var(--svg-fill);
+	cursor: pointer;
+}
+
+.settings:hover {
+	fill: var(--svg-fill-hover);
+}
+
+.no-white-space {
+	white-space: pre;
+}
+
+.scale-wrapper {
+	display: flex;
+	justify-content: space-around;
+	align-items: baseline;
+	border: 1px solid #000;
+	height: 50px;
+	text-align: center;
+	width: 20rem;
+	font-size: 4rem;
+	padding-bottom: 1rem;
+	margin-left: 5rem;
+	cursor: default;
+}
+
+.scale-wrapper span {
+	cursor: pointer;
+	display: inline-block;
+	/* margin-top: 50%; */
+	/* transform: translateY(-215%); */
+}
+
+.scale-wrapper:hover {
+	background: var(--gray-color);
+}
+
+#with-gradient input {
+	width: 30px;
+	height: 30px;
+}
+
+/* Animations */
+.show {
+	animation: show 0.4s both;
+}
+
+@keyframes show {
+	0% {
+		transform: rotateY(53deg) translateX(550px);
+	}
+
+	100% {
+		transform: rotateY(0) translateX(0);
+	}
+}
+
+.hide {
+	animation: hide 0.4s both;
+}
+
+@keyframes hide {
+	0% {
+		transform: rotateY(0) translateX(0);
+	}
+
+	100% {
+		transform: rotateY(53deg) translateX(550px);
+	}
+}
+
+
+
+
+
+
+
+footer {
+	width: 100%;
+	height: calc(200px - 80px);
+	background: #123456;
+	text-align: center;
+	padding-top: 30px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
