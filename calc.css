@@ -45,6 +45,7 @@ body {
 button, label {
 	cursor: pointer;
 	user-select: none;
+	font-size: 3rem;
 }
 
 .calc {
