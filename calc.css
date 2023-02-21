@@ -170,6 +170,7 @@ button, label {
 .scale-wrapper span {
 	cursor: pointer;
 	display: inline-block;
+	border: 1px solid black;
 	/* margin-top: 50%; */
 	/* transform: translateY(-215%); */
 }
