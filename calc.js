@@ -44,7 +44,7 @@ equalsButton.addEventListener("click", () => {
     script.text = `
         try {
             input.value = ${input.value};
-        } catch (error) {  }
+        } catch (error) { input.value = "Err2" }
     `;
 
     document.head.append(script);
