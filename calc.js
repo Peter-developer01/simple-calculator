@@ -40,17 +40,17 @@ cropButton.addEventListener("click", () => {
 });
 
 equalsButton.addEventListener("click", () => {
-    let script = document.createElement("script");
-    script.text = `
+    let scriptText = `
         try {
             input.value = ${input.value};
         } catch (error) { input.value = "Err2" }
     `;
 
     try {
-		document.head.append(script);
-    	script.text = "";
-	    script.remove();
+		let a = new Function(scriptText);
+		a();
+		input.selectionStart = input.value.length;
+		input.selectionEnd = input.value.length;
 	} catch (error) {
 		console.warn(error);
 		input.value = "FATAL";
@@ -67,9 +67,7 @@ document.querySelectorAll(".calc button").forEach(button => {
 
 input.addEventListener("keydown", (event) => {
 	if (event.key === "Enter") {
-		let selection = input.selectionStart;
 		equalsButton.click();
-		input.selectionStart = input.selectionEnd = selection;
 		translateTrueAndFalse(event.target);
 	}
 });
