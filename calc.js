@@ -47,9 +47,14 @@ equalsButton.addEventListener("click", () => {
         } catch (error) { input.value = "Err2" }
     `;
 
-    document.head.append(script);
-    script.text = "";
-    script.remove();
+    try {
+		document.head.append(script);
+    	script.text = "";
+	    script.remove();
+	} catch (error) {
+		console.warn(error);
+		input.value = "FATAL";
+	}
 });
 
 document.querySelectorAll(".calc button").forEach(button => {
