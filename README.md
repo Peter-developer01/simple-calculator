@@ -1,5 +1,7 @@
 # simple-calculator
-This calculator created and implemented by me.
+This calculator is created and implemented by me.
 ----------------------------------------------
 
-There are settings, some functions and themes
+There are settings, some functions and themes.
+
+### [Try It Online!](https://peter-developer-01.github.io/simple-calculator)
